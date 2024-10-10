@@ -1,0 +1,16 @@
+DELIMITER //
+CREATE PROCEDURE tambah_siswa(
+    IN p_nama VARCHAR(100),
+    IN p_tempat_lahir VARCHAR(50),
+    IN p_tanggal_lahir DATE,
+    IN p_alamat TEXT,
+    OUT p_nomor_pendaftaran VARCHAR(15)
+)
+BEGIN
+    INSERT INTO siswa (nama, tempat_lahir, tanggal_lahir, alamat, status_pembayaran)
+    VALUES (p_nama, p_tempat_lahir, p_tanggal_lahir, p_alamat, 'Belum Bayar');
+
+    SET p_nomor_pendaftaran = CONCAT('P-', LAST_INSERT_ID());
+    UPDATE siswa SET nomor_pendaftaran = p_nomor_pendaftaran WHERE id_siswa = LAST_INSERT_ID();
+END //
+DELIMITER ;
