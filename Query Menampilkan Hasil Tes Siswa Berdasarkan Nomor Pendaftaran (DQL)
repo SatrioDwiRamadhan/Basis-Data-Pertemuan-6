@@ -1,0 +1,4 @@
+SELECT s.nama, h.nilai_tes, h.tanggal_tes
+FROM siswa s
+JOIN hasil_tes h ON s.id_siswa = h.id_siswa
+WHERE s.nomor_pendaftaran = 'P-12345';
