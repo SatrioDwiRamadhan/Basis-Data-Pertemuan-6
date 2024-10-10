@@ -1,0 +1,9 @@
+CREATE TABLE siswa (
+    id_siswa INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    tempat_lahir VARCHAR(50),
+    tanggal_lahir DATE,
+    alamat TEXT,
+    nomor_pendaftaran VARCHAR(15) UNIQUE,
+    status_pembayaran VARCHAR(20)
+);
