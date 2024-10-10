@@ -1,0 +1,13 @@
+DELIMITER //
+CREATE PROCEDURE update_pembayaran(
+    IN p_id_siswa INT,
+    IN p_tanggal_pembayaran DATE,
+    IN p_jumlah DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO pembayaran (id_siswa, tanggal_pembayaran, jumlah)
+    VALUES (p_id_siswa, p_tanggal_pembayaran, p_jumlah);
+
+    UPDATE siswa SET status_pembayaran = 'Bayar' WHERE id_siswa = p_id_siswa;
+END //
+DELIMITER ;
