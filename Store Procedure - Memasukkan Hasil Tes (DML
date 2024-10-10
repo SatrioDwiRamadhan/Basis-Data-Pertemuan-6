@@ -1,0 +1,11 @@
+DELIMITER //
+CREATE PROCEDURE tambah_hasil_tes(
+    IN p_id_siswa INT,
+    IN p_nilai DECIMAL(5, 2),
+    IN p_tanggal_tes DATE
+)
+BEGIN
+    INSERT INTO hasil_tes (id_siswa, nilai_tes, tanggal_tes)
+    VALUES (p_id_siswa, p_nilai, p_tanggal_tes);
+END //
+DELIMITER ;
