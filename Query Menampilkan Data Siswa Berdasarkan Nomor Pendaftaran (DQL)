@@ -1,0 +1,1 @@
+SELECT * FROM siswa WHERE nomor_pendaftaran = 'P-12345';
