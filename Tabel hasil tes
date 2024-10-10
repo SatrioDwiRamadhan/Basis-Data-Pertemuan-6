@@ -1,0 +1,7 @@
+CREATE TABLE hasil_tes (
+    id_hasil INT AUTO_INCREMENT PRIMARY KEY,
+    id_siswa INT,
+    nilai_tes DECIMAL(5, 2),
+    tanggal_tes DATE,
+    FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+);
